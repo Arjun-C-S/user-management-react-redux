@@ -1,0 +1,520 @@
+/* Admin style */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=PT+Sans&display=swap');
+
+:root {
+    --dark: #2b2d42;
+    --light: #adb5bd;
+    --border: #dee2e6;
+    --border-btn: #edf2f4;
+    --white: #fff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.container {
+    max-width: 1024px;
+    margin: auto;
+}
+
+.nav-brand {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.d-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.border-shadow {
+    border: 1px solid var(--border-btn);
+    box-shadow: 1px 3px 10px #e9ecef;
+}
+
+.text-dark {
+    color: black;
+}
+
+.text-white {
+    color: white;
+}
+
+.inline {
+    display: inline-block;
+}
+
+.text-light {
+    color: var(--light);
+}
+
+.text-gradient {
+    background: linear-gradient(to right, #8e2de2, #4a00e0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#header nav {
+    background-color: black;
+    padding: 1em 0;
+    width: 100%;
+}
+
+#site-main {
+    margin-top: 6em;
+    font-family: 'Barlow', sans-serif;
+}
+
+#site-main .container .box-nav>a {
+    font-size: 1em;
+    padding: .5em 1em;
+}
+
+#site-main .container form {
+    margin: 2em 0;
+}
+
+table {
+    border-spacing: 0px;
+    width: 100%;
+}
+
+.table td,
+.table th {
+    padding: .75em;
+    vertical-align: middle;
+    text-align: center;
+    border-top: 1px solid var(--border);
+}
+
+.table td>button.btn {
+    padding: .3em 1em;
+    font-size: 1.1em;
+    margin: 0 .2em;
+}
+
+.table tr:hover {
+    background-color: #06d6a0;
+}
+
+.table tr:hover td>button {
+    box-shadow: none;
+}
+
+.table .thead-dark th {
+    color: #fff;
+    background-color: var(--dark);
+    border-color: #32383e;
+}
+
+@media only screen and (max-width: 1024px) {
+
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+    }
+
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+        border: 1px solid var(--border);
+    }
+
+    td {
+        border: none;
+        position: relative;
+    }
+
+}
+
+/*  add user & update user template */
+.form-title {
+    margin-top: 2em;
+}
+
+.form-title>h2 {
+    padding: .5em 0;
+}
+
+.new_user {
+    max-width: 786px;
+    margin: auto;
+}
+
+#update_user .form-group,
+#add_customers .form-group {
+    margin: .4em 0;
+}
+
+#update_user .form-group input[type="text"],
+#add_customers .form-group input[type="text"] {
+    width: 100%;
+    padding: .6em 1em;
+    margin: .5em 0;
+    border: 1px solid var(--border);
+    font-family: 'Barlow', sans-serif;
+    font-size: 1em;
+    border-radius: .2em;
+}
+
+#add_customers .form-group input[type="password"] {
+    width: 100%;
+    padding: .6em 1em;
+    margin: .5em 0;
+    border: 1px solid var(--border);
+    font-family: 'Barlow', sans-serif;
+    font-size: 1em;
+    border-radius: .2em;
+}
+
+#update_user .form-group .radio,
+#add_customers .form-group .radio {
+    margin: 1em 2em;
+}
+
+/* adding style to radio buttons */
+.radio input[type='radio'] {
+    position: absolute;
+    opacity: 0;
+}
+
+.radio input[type='radio']+.radio-label:before {
+    content: "";
+    background: var(--border-btn);
+    border-radius: 100%;
+    border: 1px solid var(--border);
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    position: relative;
+    top: -0em;
+    margin-right: .5em;
+    vertical-align: top;
+    cursor: pointer;
+    text-align: center;
+    -webkit-transition: all 250ms ease;
+    transition: all 250ms ease;
+}
+
+.radio input[type='radio']:checked+.radio-label:before {
+    background-color: #16db93;
+    box-shadow: inset 0 0 0 4px #e9ecef;
+}
+
+.radio input[type='radio']:focus+.radio-label:before {
+    outline: none;
+    border-color: #16db93;
+}
+
+.radio input[type='radio']:disabled+.radio-label:before {
+    box-shadow: inset 0 0 0 4px #e9ecef;
+    border-color: #b4b4b4;
+    background: #b4b4b4;
+}
+
+#update_user .form-group .btn,
+#add_customers .form-group .btn {
+    width: 100%;
+    padding: .9em 1em;
+    background-color: #16db93;
+    border: none;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: .2em;
+    margin: .5em 0;
+}
+
+#update_user .form-group .btn:hover,
+#add_customers .form-group .btn:hover {
+    background-color: var(--dark);
+    color: var(--border);
+}
+
+
+.account_created_success {
+    background-color: #16db93;
+    text-align: center;
+    font-weight: bolder;
+    color: black;
+}
+
+.account_created_disable {
+    display: none;
+}
+
+.emailExists {
+    background-color: #ff3131;
+    text-align: center;
+    font-weight: bolder;
+    color: black;
+}
+
+.emailExists_disable {
+    display: none;
+}
+
+.user-delete-indicator {
+    display: none;
+    width: 100%;
+    height: 50px;
+    background-color: red;
+    margin-top: 2em;
+    border-radius: 10px;
+}
+
+.user-unblock-indicator {
+    display: none;
+    width: 100%;
+    height: 50px;
+    background-color: green;
+    margin-top: 2em;
+    border-radius: 10px;
+}
+
+.user-delete-indicator-disable {
+    display: none;
+}
+
+.user-delete-indicator-text {
+    text-align: center;
+    padding-top: 11px;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+}
+
+.invalidCredentials {
+    background-color: red;
+    text-align: center;
+    font-weight: bolder;
+    color: white;
+}
+
+.invalidCredentials_disable {
+    display: none;
+}
+
+.admin-login-link {
+    background-color: #201e1f;
+    padding: 5px;
+    box-shadow: rgb(0 0 0 / 65%) 0px 5px 15px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.signup-link {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.home-box {
+    width: 100%;
+    height: 500px;
+    background-color: aliceblue;
+    margin-top: 50px;
+    border-radius: 10px;
+    box-shadow: rgb(0 0 0 / 65%) 0px 0px 15px;
+}
+
+.home-img-box {
+    width: 50%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.home-img {
+    width: 95%;
+    height: 95%;
+    margin-left: 15px;
+}
+
+.home-text-box {
+    width: 50%;
+    height: 100%;
+    background-color: #8e2de2;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.home-text-welcome {
+    width: 100%;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+}
+
+.home-text-name {
+    width: 100%;
+    height: 40%;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+}
+
+.logout-btn-form {
+    position: relative;
+    z-index: 2;
+    margin-top: -100px !important;
+    margin-left: 100px !important;
+}
+
+.logout-btn {
+    padding: 10px;
+    width: 78%;
+    border: 0px;
+    border-radius: 10px;
+    background-color: white;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.logout-btn:hover {
+    transition: 0.2s;
+    box-shadow: rgb(0 0 0 / 65%) 0px 0px 15px;
+}
+
+.search-box {
+    display: flex;
+    width: 50%;
+    background-color: white;
+    border-radius: 40px;
+    box-shadow: rgb(0 0 0 / 65%) 0px 0px 15px;
+}
+
+.search-box-input {
+    border: 0;
+    border-radius: 40px;
+    width: 90%;
+    padding-left: 26px;
+}
+
+.search-box-icon {
+    font-size: 20px;
+    padding-left: 0px;
+}
+
+.search-btn {
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+.avatar-upload {
+    position: relative;
+    max-width: 205px;
+    margin: 40px auto;
+}
+
+.avatar-upload .avatar-edit {
+    position: absolute;
+    right: 12px;
+    z-index: 1;
+    top: 10px;
+}
+
+.avatar-upload .avatar-edit input {
+    display: none;
+}
+
+.avatar-upload .avatar-edit input+label {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    margin-bottom: 0;
+    border-radius: 100%;
+    background: #FFFFFF;
+    border: 1px solid transparent;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    font-weight: normal;
+    transition: all 0.2s ease-in-out;
+}
+
+.avatar-upload .avatar-edit input+label:hover {
+    background: #f1f1f1;
+    border-color: #d6d6d6;
+}
+
+.avatar-upload .avatar-edit input+label:after {
+    content: "\f040";
+    font-family: 'FontAwesome';
+    color: #757575;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: auto;
+}
+
+.avatar-upload .avatar-preview {
+    width: 192px;
+    height: 192px;
+    position: relative;
+    border-radius: 100%;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+.avatar-upload .avatar-preview>div {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.editProfile {
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    border-radius: 50%;
+    float: right;
+    margin: 10px;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.btn-logout {
+    padding: .3em 1em;
+    font-size: 1.1em;
+    margin: 0 .2em;
+}
